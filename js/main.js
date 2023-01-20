@@ -38,3 +38,9 @@ window.addEventListener("scroll", (e) => {
     scrollTop.classList.remove("show");
   }
 });
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+    loginForm.classList.remove('active');
+    searchForm.classList.remove('active');
+}
