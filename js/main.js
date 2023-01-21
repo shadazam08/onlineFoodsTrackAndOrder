@@ -13,22 +13,6 @@ scrollTop.addEventListener("click", () => {
     behavior: "smooth",
   });
 });
-
-
-var swiper = new Swiper(".review-slider", {
-    loop:true,
-    spaceBetween: 30,
-    centeredSlides: true,
-    autoplay: {
-        delay: 5500,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: ".swiper-pagination",
-    },
-});
-
-
 window.addEventListener("scroll", (e) => {
   const scrollHeight = window.pageYOffset;
 
@@ -38,9 +22,3 @@ window.addEventListener("scroll", (e) => {
     scrollTop.classList.remove("show");
   }
 });
-
-window.onscroll = () =>{
-    navbar.classList.remove('active');
-    loginForm.classList.remove('active');
-    searchForm.classList.remove('active');
-}
