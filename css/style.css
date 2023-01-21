@@ -20,6 +20,7 @@
 	box-sizing: inherit;
 	margin: 0;
 	padding: 0;
+	outline: none;
 }
 
 html {
@@ -32,7 +33,7 @@ body{
 	font-size: 1.6rem;
 	font-weight: 400;
 	color: var(--black);
-	background: #eee;
+/*	background: #eee;*/
 }
 
 a {
@@ -411,45 +412,6 @@ section.services {
 	padding: 1.5rem;
 }
 
-/*Review*/
-.review .review-slider {
-	box-shadow: var(--box-shadow);
-}
-.review .review-slider .slide {
-	background: var(--white);
-	border-radius: .5rem;
-	text-align: center;
-	padding: 3rem;
-}
-.review .review-slider .slide img {
-	height: 10rem;
-	width: 10rem;
-	border-radius: 50%;
-	object-fit: cover;
-	margin-bottom: .5rem;
-}
-.review .review-slider .slide h3 {
-	font-size: 2.5rem;
-	color: #444;
-}
-.review .review-slider .slide p {
-	font-size: 1.6rem;
-	color: #666;
-	line-height: 1.7;
-	padding: 1rem 0;
-}
-.review .review-slider .slide .stars {
-	padding: 1rem 0;
-	padding-bottom: 1.5rem;
-}
-.review .review-slider .slide .stars i {
-	font-size: 2rem;
-	color: orange;
-}
-.swiper-pagination-bullet-active{
-	background: orange;
-}
-
 /* About */
 
 section.about {
@@ -491,36 +453,96 @@ section.about {
 		margin-bottom: 2rem;
 	}
 }
-.contact form {
-	max-width: 70rem;
-	margin: 0 auto;
-	text-align: center;
-}
-.contact form .inputBox {
+/* Contact */
+.container{
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-}
-.contact form textarea,
-.contact form .inputBox input {
-	width: 100%;
-	padding: 1rem;
-	font-size: 1.6rem;
-	color: #444;
-	margin: 7rem 0;
-	background: var(--bg-color-1);
+	align-items: center;
+	justify-content: center;
+	background: #fff;
+	padding: 25px 40px 10px 40px;
 	box-shadow: var(--box-shadow);
-	text-transform: none;
-	border-radius: .5rem;
 }
-.contact form textarea {
-	height: 20rem;
-	resize: none;
+.container form{
+  padding: 20px 0 0 0;
 }
-.contact form .inputBox input {
-	width: 48%;
+.container form .form-row{
+  display: flex;
+  margin: 20px 0;
+}
+form .form-row .input-data{
+  width: 100%;
+  height: 40px;
+  margin: 0 20px;
+  position: relative;
+}
+form .form-row .textarea{
+  height: 60px;
+}
+.input-data input,
+.textarea textarea{
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid var(--btn-yellow);
+}
+.input-data input:focus ~ label, .textarea textarea:focus ~ label,
+.input-data input:valid ~ label, .textarea textarea:valid ~ label{
+  transform: translateY(-20px);
+  font-size: 14px;
+  color: var(--yellow);
+}
+.textarea textarea{
+  resize: none;
+  padding-top: 10px;
+}
+.input-data label{
+  position: absolute;
+  pointer-events: none;
+  bottom: 10px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+.textarea label{
+  width: 100%;
+  bottom: 40px;
+  background: #fff;
+}
+.input-data .underline{
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+}
+.input-data .underline:before{
+  position: absolute;
+  content: "";
+  height: 2px;
+  width: 100%;
+  background: var(--yellow);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+.input-data input:focus ~ .underline:before,
+.input-data input:valid ~ .underline:before,
+.textarea textarea:focus ~ .underline:before,
+.textarea textarea:valid ~ .underline:before{
+  transform: scale(1);
 }
 
+@media (max-width: 700px) {
+  .container form{
+    padding: 10px 0 0 0;
+  }
+  .container form .form-row{
+    display: block;
+  }
+  form .form-row .input-data{
+    margin: 35px 0!important;
+  }
+}
 /* Footer  */
 
 .footer .top {
