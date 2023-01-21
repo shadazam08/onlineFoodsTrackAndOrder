@@ -28,7 +28,7 @@
         </form>
       </div>
       <div class="form-container sign-in-container">
-        <form action="#" method="post">
+        <form name="logins" method="post">
           <h1 class="yellow">Sign in</h1>
           <div class="social-container">
             <a href="#" class="social"><i class="fab fa-facebook"></i></a>
@@ -36,10 +36,11 @@
             <a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
           </div>
           <span>or use your account</span>
-          <input type="email" placeholder="Email" name="l_email" id="l_email" />
-          <input type="password" placeholder="Password" name="l_password" id="l_password" />
+          <input type="email" placeholder="Email" name="u_email" id="u_email" />
+          <input type="password" placeholder="Password" name="u_password" id="u_password" />
           <a href="#">Forgot your Password</a>
-          <button type="submit" name="l_button" id="l_button" value="sign-in">Sign In</button>
+          <button type="submit" name="l_button" id="l_button" value="sign-in" onclick="login(this.form)">Sign
+            In</button>
         </form>
       </div>
       <div class="overlay-container">
