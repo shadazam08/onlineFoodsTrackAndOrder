@@ -25,12 +25,6 @@ function login(form) {
 //  }
 //}
 
-
-
-
-
-
-
 const signUp = document.getElementById('signUp');
 const signIn = document.getElementById('signIn');
 const container = document.getElementById('container');
