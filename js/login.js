@@ -13,8 +13,8 @@ function login(form) {
         alert("Password min 8 and max length is 10.");
     }else{
 //        alert('Thank You for Login & You are Redirecting to Campuslife Website');
-//        window.location = "./users/index.html";
-        window.open('./users/index.html');
+        window.location = "./users/index.html";
+//        window.open('./users/index.html');
     }
 }
 //function check(form){
